@@ -6,32 +6,26 @@ async function generateSvg(logoText, logoTextColour, shape, shapeColour) {
     if (shape === `Circle`) {
       const newShape = new Circle(shapeColour);
       const renderedShape = newShape.render();
-      const SvgHtml = `
-        <svg width="300" height="200">
+      const SvgHtml = `<svg width="300" height="200">
         ${renderedShape}
         <text x="50%" y="50%" text-anchor="middle" font-size="50" fill="${logoTextColour}">${logoText}</text>
-        </svg>
-        `;
+        </svg>`;
       return SvgHtml;
     } else if (shape === `Square`) {
       const newShape = new Square(shapeColour);
       const renderedShape = newShape.render();
-      const SvgHtml = `
-        <svg width="300" height="200">
+      const SvgHtml = `<svg width="300" height="200">
         ${renderedShape}
         <text x="50%" y="50%" text-anchor="middle" font-size="50" fill="${logoTextColour}">${logoText}</text>
-        </svg>
-        `;
+        </svg>`;
       return SvgHtml;
     } else if (shape === `Triangle`) {
       const newShape = new Triangle(shapeColour);
       const renderedShape = newShape.render();
-      const SvgHtml = `
-        <svg width="300" height="200">
+      const SvgHtml = `<svg width="300" height="200">
         ${renderedShape}
         <text x="50%" y="50%" text-anchor="middle" font-size="50" fill="${logoTextColour}">${logoText}</text>
-        </svg>
-        `;
+        </svg>`;
       return SvgHtml;
     }
   } catch (error) {
@@ -70,14 +64,14 @@ async function runPrompt() {
       },
     ]);
 
-    console.log(inputs);
     const generatedSvg = await generateSvg(
       inputs.logoText,
       inputs.logoTextColour,
       inputs.shape,
       inputs.shapeColour
     );
-    fs.writeFileSync('logo.svg', generatedSvg)
+    fs.writeFileSync("logo.svg", generatedSvg);
+    console.log("Generated logo.svg");
   } catch (error) {
     console.error("Error occured:", error);
     throw error;
