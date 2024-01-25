@@ -71,6 +71,12 @@ async function runPrompt() {
     ]);
 
     console.log(inputs);
+    const generatedSvg = generateSvg(
+      inputs.logoText,
+      inputs.logoTextColour,
+      inputs.shape,
+      inputs.shapeColour
+    );
   } catch (error) {
     console.error("Error occured:", error);
     throw error;
