@@ -7,7 +7,7 @@ async function generateSvg(logoText, logoTextColour, shape, shapeColour) {
       const newShape = new Circle(shapeColour);
       const renderedShape = newShape.render();
       const SvgHtml = `
-        <svg width="300" height="300">
+        <svg width="300" height="200">
         ${renderedShape}
         <text x="50%" y="50%" text-anchor="middle" font-size="50" fill="${logoTextColour}">${logoText}</text>
         </svg>
@@ -17,7 +17,7 @@ async function generateSvg(logoText, logoTextColour, shape, shapeColour) {
       const newShape = new Square(shapeColour);
       const renderedShape = newShape.render();
       const SvgHtml = `
-        <svg width="300" height="300">
+        <svg width="300" height="200">
         ${renderedShape}
         <text x="50%" y="50%" text-anchor="middle" font-size="50" fill="${logoTextColour}">${logoText}</text>
         </svg>
@@ -27,7 +27,7 @@ async function generateSvg(logoText, logoTextColour, shape, shapeColour) {
       const newShape = new Triangle(shapeColour);
       const renderedShape = newShape.render();
       const SvgHtml = `
-        <svg width="300" height="300">
+        <svg width="300" height="200">
         ${renderedShape}
         <text x="50%" y="50%" text-anchor="middle" font-size="50" fill="${logoTextColour}">${logoText}</text>
         </svg>
