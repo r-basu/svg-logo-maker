@@ -9,7 +9,7 @@ async function generateSvg(logoText, logoTextColour, shape, shapeColour) {
       const SvgHtml = `
         <svg width="300" height="300">
         ${renderedShape}
-        <text x="50%" y="50%" text-anchor="middle" font-size="20" fill="${logoTextColour}">${logoText}</text>
+        <text x="50%" y="50%" text-anchor="middle" font-size="50" fill="${logoTextColour}">${logoText}</text>
         </svg>
         `;
       return SvgHtml;
@@ -19,7 +19,7 @@ async function generateSvg(logoText, logoTextColour, shape, shapeColour) {
       const SvgHtml = `
         <svg width="300" height="300">
         ${renderedShape}
-        <text x="50%" y="50%" text-anchor="middle" font-size="20" fill="${logoTextColour}">${logoText}</text>
+        <text x="50%" y="50%" text-anchor="middle" font-size="50" fill="${logoTextColour}">${logoText}</text>
         </svg>
         `;
       return SvgHtml;
@@ -29,7 +29,7 @@ async function generateSvg(logoText, logoTextColour, shape, shapeColour) {
       const SvgHtml = `
         <svg width="300" height="300">
         ${renderedShape}
-        <text x="50%" y="50%" text-anchor="middle" font-size="20" fill="${logoTextColour}">${logoText}</text>
+        <text x="50%" y="50%" text-anchor="middle" font-size="50" fill="${logoTextColour}">${logoText}</text>
         </svg>
         `;
       return SvgHtml;
@@ -71,12 +71,13 @@ async function runPrompt() {
     ]);
 
     console.log(inputs);
-    const generatedSvg = generateSvg(
+    const generatedSvg = await generateSvg(
       inputs.logoText,
       inputs.logoTextColour,
       inputs.shape,
       inputs.shapeColour
     );
+    fs.writeFileSync('logo.svg', generatedSvg)
   } catch (error) {
     console.error("Error occured:", error);
     throw error;
